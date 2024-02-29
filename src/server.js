@@ -10,7 +10,15 @@ const PORT = process.env.PORT || 5001;
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://instagrambe.onrender.com",
+      "https://m54week10assignment.netlify.app",
+    ],
+  })
+);
 
 app.use(express.json());
 
